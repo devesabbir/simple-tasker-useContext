@@ -1,0 +1,49 @@
+{
+  "data": {
+    "0": {
+      "id": 0,
+      "title": "(root)",
+      "childIds": [1, 2, 3]
+    },
+    "1": {
+      "id": 1,
+      "title": "Class One",
+      "childIds": [4]
+    },
+    "2": {
+      "id": 2,
+      "title": "Class Two",
+      "childIds": [5, 8]
+    },
+    "3": {
+      "id": 3,
+      "title": "Class Three",
+      "childIds": []
+    },
+    "4": {
+      "id": 4,
+      "title": "Sabbir Hossain",
+      "childIds": []
+    },
+    "5": {
+      "id": 5,
+      "title": "Sajid Hasan",
+      "childIds": [6, 7]
+    },
+    "6": {
+      "id": 6,
+      "title": "Science",
+      "childIds": []
+    },
+    "7": {
+      "id": 7,
+      "title": "Bangla",
+      "childIds": []
+    },
+    "8": {
+      "id": 8,
+      "title": "Saad Chowdhury",
+      "childIds": [6, 7]
+    }
+  }
+}
