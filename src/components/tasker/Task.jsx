@@ -43,7 +43,7 @@ export default function Task({ item }) {
               payload: {
                 id: item.id,
                 text: input,
-                done: false,
+                done: item.done,
               },
             });
             setEdit(false);

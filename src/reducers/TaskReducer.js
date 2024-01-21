@@ -29,7 +29,7 @@ export const taskReducer = (state, action) => {
         if (item.id === action.payload.id) {
           return {
             ...item,
-            text: action.payload.text,
+            ...action.payload,
           };
         }
         return item;
