@@ -1,13 +1,14 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext } from "react";
 import { initialTask, taskReducer } from "../reducers/TaskReducer";
+import { useImmerReducer } from "use-immer";
 
 export const TaskContext = createContext(null);
 export const TaskDispatchContext = createContext(null);
 
 export const TaskProvider = ({ children }) => {
-  const [tasks, dispatch] = useReducer(taskReducer, initialTask);
+  const [tasks, dispatch] = useImmerReducer(taskReducer, initialTask);
 
   return (
     <TaskContext.Provider value={tasks}>

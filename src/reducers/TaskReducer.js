@@ -8,36 +8,30 @@ export const initialTask = [
 
 const nextId = (data) => {
   const id = data.reduce((acc, item) => Math.max(acc, item.id), 0);
-
   return id + 1;
 };
 
-export const taskReducer = (state, action) => {
+export const taskReducer = (draft, action) => {
   switch (action.type) {
     case "added": {
-      return [
-        ...state,
-        {
-          id: nextId(state),
-          text: action.payload,
-        },
-      ];
+      draft.push({
+        id: nextId(draft),
+        text: action.payload,
+      });
+      break;
     }
 
     case "edited": {
-      return state.map((item) => {
-        if (item.id === action.payload.id) {
-          return {
-            ...item,
-            text: action.payload.text,
-          };
-        }
-        return item;
-      });
+      const index = draft.findIndex((item) => item.id === action.payload.id);
+      draft[index] = {
+        ...draft[index],
+        text: action.payload.text,
+      };
+      break;
     }
 
     case "deleted": {
-      return state.filter((item) => item.id !== action.id);
+      return draft.filter((item) => item.id !== action.id);
     }
 
     default: {
